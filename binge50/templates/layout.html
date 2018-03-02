@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head >
+        
+        <!-- Responsive meta tag -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Bootstrap 4.0 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        
+        <!-- Custom CSS -->
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+        
+        <!-- Prevent favicon requests -->
+        <link rel="shortcut icon" href="#" />
+        
+        <!-- JSGlue -->
+        {{ JSGlue.include() }}
+        
+        <!-- Pace Loading Bar -->
+        <script src="{{ url_for('static', filename='pace.js') }}"></script>
+        
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/083ffe4832.js"></script>
+        
+        <!-- Youtube API-->
+        <script src="https://www.youtube.com/iframe_api"></script>
+        
+        <!-- Circle Progress Bar -->
+        <script src="{{ url_for('static', filename='circle-progress.js') }}"></script>
+        
+        <!-- Custom javascript -->
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+        
+        <title>{% block title %}{% endblock %}</title>
+    
+    </head>
+    <Body>
+        <nav class="navbar navbar-inverse fixed-top navbar-toggleable-lg">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>    
+            </button>
+            <a class="navbar-brand" href="{{ url_for('index') }}"><Strong>Binge50</Strong></a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <div class="navbar-nav">
+                    <a id="sound-spinner" class="nav-item nav-link pr-3" href="#"><i class="fa fa-volume-off fa-lg pr-2" aria-hidden="true"></i>Sound</a>
+                    <a id="update-spinner" class="nav-item nav-link pr-3" href="{{ url_for('update') }}"><i class="fa fa-circle-o-notch" aria-hidden="true"></i>  Update</a>
+                </div>
+            </div>
+        </nav>
+        
+        {% block main %}{% endblock %}            
+        
+    </Body>
+</html>

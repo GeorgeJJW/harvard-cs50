@@ -1,0 +1,13 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is a type of lung disease.
+
+1.  The getrusage function returns resource usage statistics. 
+
+2.  There are 16 variations to type struct rusage.
+
+3.  Passing pointers to the calculate function, instead of actual values, is a more memory efficient approach.
+
+4.  The spell-checker's for loop iterates through a text file by looking at only one character (c) at a time, until it has reached the end of file (EOF). Each character will either be appended to a "word" array or discarded, depending on a number of conditions, as follows: 1) if the current character is alphabetic, or if the current character is an apostrophe and it will not become the first (index 0) character of a word array, then append the current character to the word array. 2) if the current character is numeric, discard current character, and skip ahead to the next non-alphanumeric character (a punctuation or space), then prepare to write a new word to the array by resetting index to 0. 3) if the current character is neither alphabetic nor numeric (it is a punctuation or space), and it will not becoming the first (index 0) character of the word array, discard current character, finish the current word by appending the null terminator "\0" to the word array, and prepare to write a new word to the array by resetting index to 0. 4) if the current character is alphabetic or an apostrophe, but there are already more than 45 characters stored in the word array, discard current character, skip ahead to the next non-alphabetical character, then prepare to write a new word to the array by resetting index to 0.
+
+5.  The fscanf function, when used with a format string like "%s", will continue to read characters until it has reached a whitespace (blank, newline, or tab). By relying on fscanf alone, the spell-checker program runs the risks of considering punctuations as part of a word.
+
+6.  Declaring the parameters for the check function and the load function as pointers to constant characters can prevent these functions from accidentally modifying the characters that their parameters are pointing to. 

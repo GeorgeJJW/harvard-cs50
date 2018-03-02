@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Binge50
+{% endblock %}
+
+{% block main %}
+    {% for tvshow in tvshows %}
+        <div class="container-fluid">
+            <div class="overlay"></div>
+            <div class="ytplayer" id="{{tvshow.trailer}}"></div>
+            <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+                <h1 class="display-1">{{ tvshow.name }}</h1>
+                <div class="row">
+                    <a class = "col-lg- d-flex flex-column align-items-center" href="http://www.imdb.com/title/{{ tvshow.imdb_id }}">
+                        <div class="circle circle_imdb" data-value="{{ tvshow.rating / 10 }}"></div>
+                        <p class="display-3">{{ tvshow.rating }}</p>
+                        <p class="display-4">IMDB</p>                        
+                    </a>
+                    <a class = "col-lg- d-flex flex-column align-items-center" href="https://www.rottentomatoes.com/tv/{{ tvshow.tomato_payload }}">
+                        <div class="circle circle_tomato" data-value="{{ tvshow.tomato / 100 }}"></div>
+                        <p class="display-3">{{ tvshow.tomato }}</p>
+                        <p class="display-4">RT</p>
+                    </a>
+                    <a class = "col-lg- d-flex flex-column align-items-center" href="http://www.metacritic.com/tv/{{ tvshow.metascore_payload }}">
+                        <div class="circle circle_metascore" data-value="{{ tvshow.metascore / 100 }}"></div>
+                        <p class="display-3">{{ tvshow.metascore }}</p>
+                        <p class="display-4">META</p>
+                    </a>
+                </div>
+            </div>            
+        </div>
+    {% endfor %}
+{% endblock %}

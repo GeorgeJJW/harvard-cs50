@@ -1,0 +1,23 @@
+1. Stdint.h provides a number of new integer types which are guaranteed to be consistent across different systems and environments.
+
+2. Using a data type like uint32_t enables a program to standardize the size of such data type across different platforms; such that a DWORD, for instance, will always be 32 bits across all platforms.
+
+3. A BYTE is 1 byte; a DWORD is 4 bytes; a LONG is 4 bytes; and a WORD is 2 bytes, respectively.
+
+4. The first two bytes of a BMP file are 0x42 and 0x4D in hexadecimal, which are equivalent to B and M respectively in ASCII.
+
+5. bfSize denotes the size of an entire bmp file, whereas biSize refers to the size of the BITMAPINFOHEADER, which is consistenly 14 bytes in size.
+
+6. If biHeight is negative, the bitmap originates at the upper left corner and populates its pixels in a top-down manner.
+
+7. The field biBitCount specifies the number of bits per pixel.
+
+8. fopen will return NULL if the function somehow fails to access the target file; this can happen for a number of reasons, such as the target file being corrupted or if the user accidentally put in the wrong file path. 
+
+9. Passing 1 as the third argument to fread ensures that the program only reads BITMAPFILEHEADER and BITMAPINFOHEADER once and once only.
+
+10. If bi.biWidth is 3, copy.c will assign to padding the value of 3.
+
+11. fseek allows a program to skip over part of a file and start reading the file from a specific section, as specified by the offset.
+
+12. Passing SEEK_CUR as an argument to fseek changes the location of the file pointer from its current location.
