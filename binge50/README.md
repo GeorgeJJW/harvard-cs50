@@ -2,7 +2,7 @@
 
 Binge50: Finding the next TV show to binge watch
 
-![alt text](https://s17.postimg.org/5oohp4zvz/48de30c081c3174840a5f8f94becab32.png "Binge50 screenshot")
+![alt text](https://i.imgur.com/6obiX5Z.png "Binge50 screenshot")
 
 ### Project Specification
 
